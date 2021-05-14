@@ -15,10 +15,12 @@ public class LoginService {
     }
 
     public User doLogin(String email,String password){
+        System.out.println(email);
         Optional<User> userByEmail = userRepository.getUserByEmail(email);
         if(userByEmail.isPresent()){
             User user=userByEmail.get();
             if(user.getPassword().equals(password)){
+
                 return user;
             }
         }

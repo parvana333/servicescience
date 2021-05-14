@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/")
 public class LoginController {
     private final LoginService loginService;
 
@@ -18,7 +18,7 @@ public class LoginController {
         this.loginService = loginService;
     }
 
-    @PostMapping("/login")
+    @PostMapping("login")
     public User doLogin(@RequestBody LoginDto loginDto){
         System.out.println("login servise");
         return loginService.doLogin(loginDto.getEmail(),loginDto.getPassword());
